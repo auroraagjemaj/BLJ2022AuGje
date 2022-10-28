@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Formular</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  </head>
+  <body>
+<div class="container">
+   <form>
+       
+       <label for="anrede" class="col-sm-2 col-form-label">Anrede: </label>
+    <div class="form-check form-check-inline col-sm-2 col-form-label" id="anrede">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+        <label class="form-check-label" for="inlineRadio1">Herr</label>
+      </div>
+      <div class="form-check form-check-inline col-sm-2 col-form-label" id="anrede">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+        <label class="form-check-label" for="inlineRadio2">Frau</label>
+      </div>
+    
+
+    <div class="form-group row">
+        <label for="Vorname" class="col-sm-2 col-form-label">Vorname: </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="Vorname" placeholder="Max" autofocus="">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="Nachname" class="col-sm-2 col-form-label">Nachname: </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="Nachname" placeholder="Muster">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="Datum" class="col-sm-2 col-form-label">Datum: </label>
+        <div class="col-sm-10">
+          <input type="date" class="form-control" id="Datum" placeholder="">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="strasse" class="col-sm-2 col-form-label">Strasse: </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="strasse" placeholder="Musterstrasse 12">
+        </div>
+        </div>
+
+        <div class="row g-3">
+            <label for="City" class="col-sm-2 col-form-label">PLZ:</label>
+            <div class="col-sm-2">
+              <input type="text" class="form-control" placeholder="8320" aria-label="City">
+            </div>
+            <label for="City" class="col-sm-2 col-form-label">Ort:</label>
+            <div class="col-sm">
+              <input type="text" class="form-control" placeholder="Fehraltdorf" aria-label="State">
+            </div>
+        </div>   
+<br>
+        <div class="form-group row">
+            <label for="land" class="col-sm-2 col-form-label">Land: </label>
+            <div class="col-sm-10">
+              <select type="text" class="form-control" id="land">
+                  <option selected>Wählen Sie ein Land aus</option>
+                  <option>Schweiz</option>
+                  <option>Deutschland</option>
+                  <option>Frankreich</option>
+                  <option>Italien</option>
+                  <option>...</option>
+            </div>
+            </div>
+
+      </form> 
+    </div>
+  </body>
+</html>
