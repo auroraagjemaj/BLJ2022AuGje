@@ -1,3 +1,5 @@
+package ch.noseryoung.blj;
+
 import ch.noseryoung.blj.Person;
 
 import java.util.Scanner;
