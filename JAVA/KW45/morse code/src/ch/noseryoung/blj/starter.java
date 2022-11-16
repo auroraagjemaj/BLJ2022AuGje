@@ -1,3 +1,5 @@
+package ch.noseryoung.blj;
+
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.Map;
@@ -8,9 +10,9 @@ public class starter {
         System.out.println("Welcome to my morse translator program!");
         System.out.println("*******************************************");
         while (true) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("do you want to translate in morse or in letters? \nm= morse l= letters");
-        String signs = sc.nextLine();
+            Scanner sc = new Scanner(System.in);
+            System.out.println("do you want to translate in morse or in letters? \nm= morse l= letters");
+            String signs = sc.nextLine();
 
             if (signs.equals("m")) {
                 System.out.println("enter your word:");
