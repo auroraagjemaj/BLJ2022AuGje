@@ -61,7 +61,7 @@ public class Main {
         else if (berechnung == 6){System.out.println("weekday: Saturday");}
         else if (berechnung == 7){System.out.println("weekday: Sunday");}
 
-       /* if(((viertel + (viertel/4))+ months[monthh] + day + jahrrrr) % 7 == 5 ){
+       if(((viertel + (viertel/4))+ months[monthh] + day + jahrrrr) % 7 == 5 ){
     System.out.println("weekday: Monday");
       }else if(((viertel + (viertel/4))+ months[monthh] + day + jahrrrr) % 7 == 6 ){
             System.out.println("weekday: Tuesday");
@@ -79,7 +79,7 @@ public class Main {
         }else if(((viertel + (viertel/4))+ months[monthh] + day + jahrrrr) % 7 == 4 ){
             System.out.println("weekday: Sunday");
 
-        }*/
+        }
 }
 }
 
