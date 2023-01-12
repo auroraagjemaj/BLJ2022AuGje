@@ -1,10 +1,8 @@
 package ch.noseryoung.app;
-
 import java.util.Scanner;
 import ch.noseryoung.exceptions.*;
 
 public class TriangleApp {
-
     private boolean isRunning = true;
     private String sideAInput, sideBInput, sideCInput, code;
     private double sideA, sideB, sideC;
@@ -74,7 +72,7 @@ public class TriangleApp {
     }
 
     private void validateInput() throws TriangleException {
-        // validate sideAInput, sideBInput, sideCInput as double
+
         try {
             sideA = Double.parseDouble(sideAInput);
             sideB = Double.parseDouble(sideBInput);
