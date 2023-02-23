@@ -8,7 +8,11 @@ public class Newspaper extends PrintedMedia{
 
     @Override
     public void printInfo(){
+        System.out.println("\t\t\t\t\t\t\t\tNEWSPAPER:\n");
         super.printInfo();
-        String npInfo = "\nAdvertising:" + advertising;
+        String npInfo = "Advertising:" + advertising;
+        System.out.println(npInfo);
+        System.out.println("------------------------------------------------------------------------------");
+
     }
 }

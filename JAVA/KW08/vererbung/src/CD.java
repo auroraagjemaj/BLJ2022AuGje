@@ -8,7 +8,11 @@ public class CD extends HearingMedia{
 
     @Override
     public void printInfo(){
+        System.out.println("\t\t\t\t\t\t\t\t\tCD:\n");
         super.printInfo();
-        String cdInfo = "\nType:" + type;
+        String cdInfo = "Type:" + type;
+        System.out.println(cdInfo);
+        System.out.println("------------------------------------------------------------------------------");
+
     }
 }

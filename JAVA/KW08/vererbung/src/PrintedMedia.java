@@ -9,6 +9,7 @@ public class PrintedMedia extends Mediacollection{
     @Override
     public void printInfo(){
         super.printInfo();
-        String pmInfo = "\nPages:" + pages;
+        String pmInfo = "Pages:" + pages;
+        System.out.println(pmInfo);
     }
 }

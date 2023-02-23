@@ -10,8 +10,11 @@ public class DVD extends HearingMedia{
 
     @Override
     public void printInfo(){
+        System.out.println("\t\t\t\t\t\t\t\t\tDVD:\n");
         super.printInfo();
-        String dvdInfo = "\nActors:" + actors +
+        String dvdInfo = "Actors:" + actors +
                 "\nResolution:" + resolution;
+        System.out.println(dvdInfo);
+        System.out.println("------------------------------------------------------------------------------");
     }
 }

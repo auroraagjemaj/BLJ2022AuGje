@@ -10,8 +10,12 @@ public class Videogame extends Mediacollection{
 
     @Override
     public void printInfo(){
+        System.out.println("\t\t\t\t\t\t\t\tVIDEOGAME:\n");
         super.printInfo();
-        String vgInfo = "\nSeason:" + season +
+        String vgInfo = "Season:" + season +
                 "\nAge restriction:" + ageRestriction;
+        System.out.println(vgInfo);
+        System.out.println("------------------------------------------------------------------------------");
+
     }
 }

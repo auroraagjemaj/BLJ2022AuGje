@@ -8,7 +8,11 @@ public class Book extends PrintedMedia{
 
     @Override
     public void printInfo(){
+        System.out.println("\t\t\t\t\t\t\t\t\tBOOK:\n");
         super.printInfo();
-        String bInfo = "\nChapters:" + chapters;
+        String bInfo = "Chapters:" + chapters;
+        System.out.println(bInfo);
+        System.out.println("------------------------------------------------------------------------------");
+
     }
 }

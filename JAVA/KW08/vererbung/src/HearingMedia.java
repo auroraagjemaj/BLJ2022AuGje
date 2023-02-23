@@ -9,6 +9,7 @@ public class HearingMedia extends Mediacollection{
     @Override
     public void printInfo(){
         super.printInfo();
-        String hmInfo = "\nDuration:" + duration;
+        String hmInfo = "Duration:" + duration;
+        System.out.println(hmInfo);
     }
 }
