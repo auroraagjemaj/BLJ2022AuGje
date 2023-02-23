@@ -7,13 +7,14 @@ public class Exercise1 {
     private static int count = 0;
     private static int numOfColumns = 0;
     public static int mark = 0;
-
+    static Scanner scanner = new Scanner(System.in);
+    static String path = scanner.nextLine();
     public static void rows() {
 
         try {
-            File exc1 = new File("C:\\Users\\Aurora\\BLJ2022AuGje\\JAVA\\KW06\\Bewerter\\src\\exc1_f1.txt");
 
-            Scanner scanner = new Scanner(exc1);
+            File exc1 = new File(path);
+
 
             while (scanner.hasNextLine()) {
                 scanner.nextLine();
@@ -33,7 +34,7 @@ public class Exercise1 {
 
     public static void column() {
         try {
-            BufferedReader brTest = new BufferedReader(new FileReader("C:\\Users\\Aurora\\BLJ2022AuGje\\JAVA\\KW06\\Bewerter\\src\\exc1_f1.txt"));
+            BufferedReader brTest = new BufferedReader(new FileReader(path));
             String text = brTest.readLine();
 
             Scanner txtScanner = new Scanner(text);
@@ -57,7 +58,7 @@ public class Exercise1 {
         }
     }
     public static void order() throws IOException {
-        BufferedReader brTest = new BufferedReader(new FileReader("C:\\Users\\Aurora\\BLJ2022AuGje\\JAVA\\KW06\\Bewerter\\src\\exc1_f1.txt"));
+        BufferedReader brTest = new BufferedReader(new FileReader(path));
         String text = brTest.readLine();
         if(text.equals(" MITARBEITER |   Chef    | CHEF SALARY")){
             mark++;
@@ -71,6 +72,9 @@ public class Exercise1 {
     }
 
     public static void start1() throws IOException {
+        System.out.println("write the path!");
+        String path = scanner.nextLine();
+
 
         System.out.println("*******************************************");
         System.out.println("*              Exercise 1                 *");

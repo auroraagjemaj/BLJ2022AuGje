@@ -1,4 +1,4 @@
-package ch.noseryoung.ch;
+package ch.noseryoung.blj;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,18 +6,16 @@ import java.util.List;
 
 /**
  * This class implements an elementary cellular automaton. See
- *  https://en.wikipedia.org/wiki/Elementary_cellular_automaton  for
+ * { https://en.wikipedia.org/wiki/Elementary_cellular_automaton } for
  * clarification.
  *
  * @author surber
- *
  */
 public class Automaton {
-
     private String rule;
     private String currentGeneration;
 
-    private List<String> history;
+    private List <String> history;
 
     /**
      * This constructor initializes this Automaton with a given rule and an initial
@@ -30,13 +28,17 @@ public class Automaton {
      *                          makes it the basis for all future generations.
      *                          Expected is a String having only ones and zeros and
      *                          a minimal length of 3.
-     *
      * @throws IllegalArgumentException if the given rule doesn't match the pattern
      *                                  <code>[01]{8}</code> or the initial state
      *                                  doesn't match <code>[01]{3,}</code>.
      */
     public Automaton(String rule, String initialGeneration) throws IllegalArgumentException {
-        // EXTRA CHALLENGE: Implement this constructor using no more than 6 lines of code
+        if (rule.matches("[01]{8}") || initialGeneration.matches("[01]{3,}")) {
+            this.rule = rule;
+            currentGeneration = initialGeneration;
+        } else {
+            throw new IllegalArgumentException();
+        }
     }
 
     /**
@@ -52,19 +54,25 @@ public class Automaton {
      *                          a minimal length of 3.
      */
     public Automaton(int rule, String initialGeneration) {
-        // EXTRA CHALLENGE: Implement this constructor using no more than 1 line of code
+        this(String.format("%08d", Integer.parseInt(Integer.toBinaryString(rule))), initialGeneration);
     }
 
     /**
      * This method advances this Automatons generation by one. This is done by using
-     * the given rule and the current generation, with the latter changing
+     * the given rule and the current generate with the latter changing
      * every time this method gets called. All generations get saved in
      * {@link #history}.
      *
      * @return a String representing the next generation.
      */
     public String nextGeneration() {
-        // EXTRA CHALLENGE: Implement this method using no more than 12 lines of code
+        history.add(currentGeneration);
+        StringBuilder sb = new StringBuilder("0");
+        for (int i = 0; i < currentGeneration.length()-2; i++) {
+            String binarypart = currentGeneration.substring(i,i+3);
+            int number = Integer.parseInt(binarypart, 2);
+        } return null;
+    }
 
     /**
      * This method advances this Automaton by any number of generations. Since with
@@ -90,18 +98,18 @@ public class Automaton {
     }
 
     public String getBinaryRule() {
-        // No exceptions, implement this method using only a single line of code
+        return null;
     }
 
     public int getIntegerRule() {
-        // No exceptions, implement this method using only a single line of code
+        return 0;
     }
 
     public String getCurrentGeneration() {
-        // No exceptions, implement this method using only a single line of code
+        return currentGeneration;
     }
 
     public List<String> getHistory() {
-        // No exceptions, implement this method using only a single line of code
+        return history;
     }
 }
