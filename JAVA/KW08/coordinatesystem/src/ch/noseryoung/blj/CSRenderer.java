@@ -1,4 +1,4 @@
-package ch.noseryoung;
+package ch.noseryoung.blj;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -12,13 +12,6 @@ import java.awt.event.MouseEvent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-/**
- * This class is responsible for visualising a given coordinate system in a
- * halfway pleasing way.
- *
- * @author surber
- *
- */
 public class CSRenderer extends JPanel {
 
     private CoordinateSystem cs;
@@ -31,15 +24,6 @@ public class CSRenderer extends JPanel {
     private final int OFFSET_MID;
     private final int OFFSET_END;
 
-    /**
-     * This constructor sets up the window where the coordinate system will be
-     * drawn.
-     *
-     * @param cs         The coordinate system (including all points) to draw.
-     * @param fieldScale The scaling of the coordinate system.
-     * @param pointSize  The size which will determine how large points will appear
-     *                   in the coordinate system.
-     */
     public CSRenderer(CoordinateSystem cs, int fieldScale, int pointSize) {
         this.cs = cs;
         this.size = cs.getCoordinateSystemSize() * fieldScale;
@@ -63,24 +47,10 @@ public class CSRenderer extends JPanel {
         mainFrame.setVisible(true);
     }
 
-    /**
-     * This constructor sets up the window where the coordinate system will be
-     * drawn. Default values of 1 and 3 will be assumed for
-     * {@link CSRenderer#fieldScale} and {@link CSRenderer#pointSize} respectively.
-     *
-     * @param cs The coordinate system (including all points) to draw.
-     */
     public CSRenderer(CoordinateSystem cs) {
-        this(cs, 1, 3);
+        this(cs, 1, 2);
     }
 
-    /**
-     * This method gets called automagically once the panel, where the coordinate
-     * system will be drawn, becomes visible. Furthermore, the actual drawing
-     * happens in this method as well.
-     *
-     * @param g The Graphics object of this class.
-     */
     @Override
     public void paintComponent(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
@@ -109,31 +79,21 @@ public class CSRenderer extends JPanel {
         g2d.setStroke(new BasicStroke(pointSize));
         for (CSPoint point : cs.getAllPoints()) {
             CSPoint translatedPoint = translatePoint(point);
-            g2d.setColor(Color.BLUE);
+            g2d.setColor(Color.BLACK);
             g2d.drawLine(translatedPoint.x, translatedPoint.y, translatedPoint.x, translatedPoint.y);
         }
-    }
 
-    /**
-     * This method is responsible for converting a Java Swing absolute position
-     * point (origin at the very top left) to a point of a cartesian coordinate
-     * system.
-     *
-     * @param point The absolute point to convert.
-     * @return The converted point.
-     */
+        for (CSLineSegment line : cs.getListlines()) {
+            CSPoint translatedPoint1 = translatePoint(line.point1);
+            CSPoint translatedPoint2 = translatePoint(line.point2);
+            g2d.setColor(Color.BLACK);
+            g2d.drawLine(translatedPoint1.x, translatedPoint1.y, translatedPoint2.x, translatedPoint2.y);
+        }
+    }
     private CSPoint translatePoint(Point point) {
         return new CSPoint(point.x * fieldScale + size / 2, size / 2 - point.y * fieldScale);
     }
 
-    /**
-     * This method sets up the mouse motion listener, which gets called every time
-     * the mouse was moved inside the window containing the drawn coordinate system.
-     *
-     * @param leeway The deviation that is allowed to exist between the mouse
-     *               coordinate and the coordinate of a drawn point. A leeway of 0
-     *               means that the both coordinates must be an exact match.
-     */
     private void setupMouseMotionListener(int leeway) {
         int scaledLeeway = leeway + pointSize / 2;
         this.addMouseMotionListener(new MouseAdapter() {
